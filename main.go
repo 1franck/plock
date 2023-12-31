@@ -54,7 +54,7 @@ func main() {
 		}
 
 		sslGenerated = true
-	} else {
+	} else if *ssl && !commandExists("openssl") {
 		log.Println("openssl not found, cannot use ssl")
 		*ssl = false
 	}
